@@ -38,29 +38,37 @@
 
 # 4.Задайте список из N элементов, заполненных числами из промежутка [-N, N]. Найдите произведение элементов на указанных позициях. Позиции хранятся в файле file.txt в одной строке одно число.
 
-from random import Random, randint
+# from random import Random, randint
 
 
-N = int(input('Введите количество элементов '))
-numbers = []
-for i in range(N):
-    numbers.append(randint(-N,N+1))
+# N = int(input('Введите количество элементов '))
+# numbers = []
+# for i in range(N):
+#     numbers.append(randint(-N,N+1))
     
-print(numbers)
+# print(numbers)
 
-f = open('file.txt', 'w')
-while True:
-    s = input('Укажите позицию для вычисления - ')    #Для выхода из файла file.txt просто нажать Enter
-    if s == "":
-        break
-    f.write(s+"\n")
-f.close()
+# f = open('file.txt', 'w')
+# while True:
+#     s = input('Укажите позицию для вычисления - ')    #Для выхода из файла file.txt просто нажать Enter
+#     if s == "":
+#         break
+#     f.write(s+"\n")
+# f.close()
 
-result = 1
-f = open('file.txt', 'r')
-for line in f:
-    if line == "":
-        break
-    result *= numbers[int(line)]
-f.close()
-print(result)
+# result = 1
+# f = open('file.txt', 'r')
+# for line in f:
+#     if line == "":
+#         break
+#     result *= numbers[int(line)]
+# f.close()
+# print(result)
+
+# 5.Реализовать алгоритм перемешивания списка.
+
+import random
+lst = [random.randint(0,10) for i in range(random.randint(5,20))]
+print(f"исходный список:\n {lst}")
+random.shuffle(lst)
+print(f"список после перемешивания:\n{lst}")
